@@ -104,7 +104,7 @@ Configuration5_Item5=?
 Configuration5_Name6=SortOrder
 Configuration5_Item6=Designator=Up
 Configuration5_Name7=VisibleOrder
-Configuration5_Item7=Designator=100|Comment=100|LibRef=100|Quantity=100|Description=100
+Configuration5_Item7=Designator=250|Comment=125|LibRef=125|Quantity=125|Description=125
 OutputType6=Assembly
 OutputName6=Assembly Drawings
 OutputCategory6=Assembly
@@ -203,7 +203,7 @@ MarkPortsId2=1
 GenerateTOC=1
 ShowComponentParameters2=1
 GlobalBookmarks2=0
-OutputFilePath3=D:\INSTOCK\electronics\v3\gripper\gripper\Fabrication\Current\
+OutputFilePath3=D:\ALTIUM\Progects\FDD\Fabrication\Current\
 ReleaseManaged3=0
 OutputBasePath3=Fabrication\Current\
 OutputPathMedia3=
@@ -220,7 +220,7 @@ OpenOutput3=1
 [GeneratedFilesSettings]
 RelativeOutputPath2=C:\!dev\ferro\src\electronics\v3\load_cell_adc\Fabrication\Current\Schematic\Load_Cell_ADC_Schematic.PDF
 OpenOutputs2=0
-RelativeOutputPath3=D:\INSTOCK\electronics\v3\gripper\gripper\Fabrication\Current\
+RelativeOutputPath3=D:\ALTIUM\Progects\FDD\Fabrication\Current\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0
