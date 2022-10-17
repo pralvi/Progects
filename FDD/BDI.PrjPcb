@@ -126,126 +126,70 @@ DocumentPath=Fabrication\Current\BOM\Bill of Materials-BDI.xls
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Fabrication\Current\NC Drill\FDD+3.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument5]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GBP
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GM32
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GTP
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Fabrication\Current\Gerber\FDD+3.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument14]
-DocumentPath=Fabrication\Current\ExportSTEP\FDD+3.step
-DItemRevisionGUID=
-
-[GeneratedDocument15]
-DocumentPath=Fabrication\Current\NC Drill\FDD+3.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument16]
 DocumentPath=Fabrication\Current\NC Drill\FDDplus3.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument17]
+[GeneratedDocument3]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument18]
+[GeneratedDocument4]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument19]
+[GeneratedDocument5]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument20]
+[GeneratedDocument6]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument21]
+[GeneratedDocument7]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument22]
+[GeneratedDocument8]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GM32
 DItemRevisionGUID=
 
-[GeneratedDocument23]
+[GeneratedDocument9]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument24]
+[GeneratedDocument10]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument25]
+[GeneratedDocument11]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument26]
+[GeneratedDocument12]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument27]
+[GeneratedDocument13]
 DocumentPath=Fabrication\Current\NC Drill\FDDplus3.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument28]
+[GeneratedDocument14]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.REP
 DItemRevisionGUID=
 
-[GeneratedDocument29]
+[GeneratedDocument15]
 DocumentPath=Fabrication\Current\Gerber\FDDplus3.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument30]
+[GeneratedDocument16]
 DocumentPath=Fabrication\Current\ExportSTEP\FDDplus3.step
 DItemRevisionGUID=
 
-[GeneratedDocument31]
+[GeneratedDocument17]
 DocumentPath=Fabrication\Current\NC Drill\FDDplus3.TXT
 DItemRevisionGUID=
 
-[GeneratedDocument32]
+[GeneratedDocument18]
 DocumentPath=Fabrication\Current\Pick Place\Pick Place for FDDplus3.csv
 DItemRevisionGUID=
 
