@@ -121,6 +121,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+<<<<<<< HEAD
 [Document6]
 DocumentPath=BDI.OutJob
 AnnotationEnabled=1
@@ -134,12 +135,85 @@ DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
+=======
+[GeneratedDocument1]
+DocumentPath=Fabrication\Current\BOM\Bill of Materials-BDI.xls
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Fabrication\Current\NC Drill\FDDplus3.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GM32
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Fabrication\Current\NC Drill\FDDplus3.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.REP
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Fabrication\Current\Gerber\FDDplus3.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Fabrication\Current\ExportSTEP\FDDplus3.step
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Fabrication\Current\NC Drill\FDDplus3.TXT
+>>>>>>> bc1d95223ad87f1f5196c8f8c4c670401ac2fc78
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+<<<<<<< HEAD
 [GeneratedDocument1]
 DocumentPath=Fabrication\Current\BOM\Bill of Materials-BDI.xls
+=======
+[GeneratedDocument18]
+DocumentPath=Fabrication\Current\Pick Place\Pick Place for FDDplus3.csv
+>>>>>>> bc1d95223ad87f1f5196c8f8c4c670401ac2fc78
 DItemRevisionGUID=
 
 [Configuration1]
