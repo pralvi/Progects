@@ -122,7 +122,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
-DocumentPath=BDI.OutJob
+DocumentPath=FDDplus3.v1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -136,7 +136,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HSSGKQYT
 
 [GeneratedDocument1]
 DocumentPath=Fabrication\Current\BOM\Bill of Materials-BDI.xls
