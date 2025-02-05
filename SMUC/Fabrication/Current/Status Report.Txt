@@ -1,0 +1,9 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Schematic Document [smuc.SchDoc]
+
+
+Files Generated   : 0
+Documents Printed : 0
+
+Finished Output Generation At 16:25:24 On 05.02.2025

@@ -105,7 +105,7 @@ GenerateClassCluster=0
 DocumentUniqueId=GPCVTALS
 
 [Document5]
-DocumentPath=smuc.PcbDoc
+DocumentPath=smucF.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -120,6 +120,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HSSGKQYT
+
+[Document6]
+DocumentPath=smuc.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ETIRHQDY
 
 [Configuration1]
 Name=Default Configuration
