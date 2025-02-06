@@ -1,8 +1,8 @@
 DRC Rules Export File for PCB: D:\ALTIUM\Progects\SMUC\smucF.PcbDoc
-RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
-RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87
-RuleKind=Width|RuleName=Width|Scope=Board|Minimum=23.62
-RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
-RuleKind=Width|RuleName=Width_1|Scope=Board|Minimum=11.81
-RuleKind=Width|RuleName=Width_2|Scope=Board|Minimum=23.62
 RuleKind=Width|RuleName=Width_3|Scope=Board|Minimum=39.37
+RuleKind=Width|RuleName=Width_2|Scope=Board|Minimum=23.62
+RuleKind=Width|RuleName=Width_1|Scope=Board|Minimum=11.81
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=23.62
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.87
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
