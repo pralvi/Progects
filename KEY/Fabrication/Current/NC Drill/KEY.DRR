@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: KEY.PcbDoc   04.05.2025  9:49:20
+---------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : KEY.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        39.37mil (1mm)           Round          8                1.20 Inch (30.48 mm)
+T2        78.74mil (2mm)           Round          2                0.39 Inch (10.00 mm)
+---------------------------------------------------------------------------
+Totals                                            10               1.59 Inch (40.48 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
