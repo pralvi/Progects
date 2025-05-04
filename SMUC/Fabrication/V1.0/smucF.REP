@@ -1,9 +1,9 @@
 *************************************************************
-FileName = smuc.GBR
+FileName = smucF.GBR
 AutoAperture = True
 *************************************************************
 Generating : Top
-      File : smuc.GTL
+      File : smucF.GTL
 
     Adding Layer      : Top
 
@@ -20,14 +20,11 @@ Used DCodes :
     D16
     D17
     D18
-    D19
-    D20
-    D21
 *************************************************************
 
 *************************************************************
 Generating : Bottom
-      File : smuc.GBL
+      File : smucF.GBL
 
     Adding Layer      : Bottom
 
@@ -44,26 +41,26 @@ Used DCodes :
     D16
     D17
     D18
-    D19
-    D20
-    D21
 *************************************************************
 
 *************************************************************
 Generating : Top Overlay
-      File : smuc.GTO
+      File : smucF.GTO
 
     Adding Layer      : Top Overlay
 
 
 Used DCodes :
+    D19
+    D20
+    D21
     D22
     D23
 *************************************************************
 
 *************************************************************
 Generating : Top Paste
-      File : smuc.GTP
+      File : smucF.GTP
 
     Adding Layer      : Top Paste
 
@@ -78,7 +75,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Solder
-      File : smuc.GTS
+      File : smucF.GTS
 
     Adding Layer      : Top Solder
 
@@ -94,15 +91,11 @@ Used DCodes :
     D27
     D28
     D29
-    D30
-    D31
-    D32
-    D33
 *************************************************************
 
 *************************************************************
 Generating : Bottom Solder
-      File : smuc.GBS
+      File : smucF.GBS
 
     Adding Layer      : Bottom Solder
 
@@ -118,15 +111,11 @@ Used DCodes :
     D27
     D28
     D29
-    D30
-    D31
-    D32
-    D33
 *************************************************************
 
 *************************************************************
 Generating : Bottom Paste
-      File : smuc.GBP
+      File : smucF.GBP
 
     Adding Layer      : Bottom Paste
 
@@ -141,7 +130,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Overlay
-      File : smuc.GBO
+      File : smucF.GBO
 
     Adding Layer      : Bottom Overlay
 
@@ -151,12 +140,12 @@ Used DCodes :
 
 *************************************************************
 Generating : Outline
-      File : smuc.GM32
+      File : smucF.GM32
 
     Adding Layer      : Outline
 
 
 Used DCodes :
-    D23
+    D22
 *************************************************************
 

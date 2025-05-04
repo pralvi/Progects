@@ -1,9 +1,10 @@
 Output: Bill of Materials
 Type  : BOM
 From  : Variant [[No Variations]] of Schematic Document [smuc.SchDoc]
+   Generated File[Bill of Materials-smuc.xls]
 
 
-Files Generated   : 0
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 16:25:24 On 05.02.2025
+Finished Output Generation At 15:29:34 On 13.02.2025
