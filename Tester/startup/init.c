@@ -68,18 +68,6 @@ void init_gpio(void) {
     // Disable JTAG and OSC_IN/OUT to extend the number of available GPIO pins. SWD remains enabled
     AFIO->MAPR = AFIO_MAPR_SWJ_CFG_JTAGDISABLE | AFIO_MAPR_PD01_REMAP;
 
-//    SET_PIN(LED_STATUS, 0);
-//    SET_PIN(LED_LOCK, 0);
-//    SET_PIN(LED_UNLOCK, 0);
-//    SET_PIN(LED_ERROR, 0);
-//    SET_PIN(POWER_RFID, 0);
-//
-//    CFG_PIN(LED_STATUS, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-//    CFG_PIN(LED_LOCK, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-//    CFG_PIN(LED_UNLOCK, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-//    CFG_PIN(LED_ERROR, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-//    CFG_PIN(POWER_RFID, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-
 }
 
 uint8_t ParseUARTCommand(char* cmd, uint8_t size) {

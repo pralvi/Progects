@@ -61,12 +61,11 @@ extern "C" {
 #define ADR10     B, 10
 
 //CONTROL
-#define CTL0      A, 8
-#define CTL1      B, 11
-#define CTL2      B, 12
-#define CTL3      B, 13
-#define CTL4      B, 14
-#define CTL5      B, 15
+#define CTL0      B, 12
+#define CTL1      B, 13
+#define CTL2      B, 14
+#define CTL3      B, 15
+#define CTL4      A, 8
 
 //USART Pins
 #define RX_PIN          A, 10   //USART1 RX
