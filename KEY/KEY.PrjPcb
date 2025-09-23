@@ -224,67 +224,63 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Fabrication\Current\NC Drill\smucF.DRR
+DocumentPath=Fabrication\Current\NC Drill\KEY.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Fabrication\Current\Gerber\smucF.EXTREP
+DocumentPath=Fabrication\Current\Gerber\KEY.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Fabrication\Current\Gerber\smucF.GBL
+DocumentPath=Fabrication\Current\Gerber\KEY.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Fabrication\Current\Gerber\smucF.GBO
+DocumentPath=Fabrication\Current\Gerber\KEY.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Fabrication\Current\Gerber\smucF.GBP
+DocumentPath=Fabrication\Current\Gerber\KEY.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Fabrication\Current\Gerber\smucF.GBS
+DocumentPath=Fabrication\Current\Gerber\KEY.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Fabrication\Current\Gerber\smucF.GM32
+DocumentPath=Fabrication\Current\Gerber\KEY.GM32
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Fabrication\Current\Gerber\smucF.GTL
+DocumentPath=Fabrication\Current\Gerber\KEY.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Fabrication\Current\Gerber\smucF.GTO
+DocumentPath=Fabrication\Current\Gerber\KEY.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Fabrication\Current\Gerber\smucF.GTP
+DocumentPath=Fabrication\Current\Gerber\KEY.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Fabrication\Current\Gerber\smucF.GTS
+DocumentPath=Fabrication\Current\Gerber\KEY.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Fabrication\Current\NC Drill\smucF.LDP
+DocumentPath=Fabrication\Current\NC Drill\KEY.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Fabrication\Current\Gerber\smucF.REP
+DocumentPath=Fabrication\Current\Gerber\KEY.REP
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Fabrication\Current\Gerber\smucF.RUL
+DocumentPath=Fabrication\Current\Gerber\KEY.RUL
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Fabrication\Current\ExportSTEP\smucF.step
-DItemRevisionGUID=
-
-[GeneratedDocument16]
-DocumentPath=Fabrication\Current\NC Drill\smucF.TXT
+DocumentPath=Fabrication\Current\NC Drill\KEY.TXT
 DItemRevisionGUID=
 
 [Configuration1]
