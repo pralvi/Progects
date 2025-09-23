@@ -33,7 +33,7 @@ void init_565RU6(void)
 
 }
 
-void set_adr_556RU6(uint8_t adr)
+void set_lo_adr_556RU6(uint16_t adr)
 {
     SET_PIN(ADR0 , adr & 1);
     SET_PIN(ADR1 , adr & 2);
@@ -44,11 +44,22 @@ void set_adr_556RU6(uint8_t adr)
     SET_PIN(ADR6 , adr & 64);
 }
 
-void regen_556RU6(uint8_t tag)
+void set_hi_adr_556RU6(uint16_t adr)
+{
+    SET_PIN(ADR0 , adr & 128);
+    SET_PIN(ADR1 , adr & 256);
+    SET_PIN(ADR2 , adr & 512);
+    SET_PIN(ADR3 , adr & 1024);
+    SET_PIN(ADR4 , adr & 2048);
+    SET_PIN(ADR5 , adr & 4096);
+    SET_PIN(ADR6 , adr & 8192);
+}
+
+void regen_556RU6(uint8_t tag) // 128 * 2us = 256us cycle
 {
     for (uint8_t i = 0; i <128; i++)
     {
-        set_adr_556RU6(i);
+        set_lo_adr_556RU6(i);
         SET_PIN(RAS , 0);
         Delay_us(1);
         SET_PIN(RAS , 1);
@@ -56,3 +67,45 @@ void regen_556RU6(uint8_t tag)
     }
 
 }
+
+uint8_t read_556RU6(uint16_t adr)
+{
+    set_lo_adr_556RU6(adr);
+    SET_PIN(RAS , 0);
+    Delay_us(1);
+    set_hi_adr_556RU6(adr);
+    SET_PIN(WR , 1);
+    Delay_us(1);
+    SET_PIN(CAS , 0);
+    Delay_us(1);
+    SET_PIN(CAS , 1);
+    SET_PIN(RAS , 1);
+    return GET_PIN(DO);
+}
+
+void write_556RU6(uint16_t adr, uint8_t data)
+{
+    set_lo_adr_556RU6(adr);
+    SET_PIN(RAS , 0);
+    Delay_us(1);
+    set_hi_adr_556RU6(adr);
+    SET_PIN(DI , data);
+    SET_PIN(WR , 0);
+    Delay_us(1);
+    SET_PIN(CAS , 0);
+    Delay_us(1);
+    SET_PIN(WR , 1);
+    SET_PIN(CAS , 1);
+    SET_PIN(RAS , 1);
+}
+
+void start_556RU6(void)
+{
+    if (tester_mode == MODE_556RU6) return;
+    tester_mode = MODE_556RU6;
+    init_565RU6();
+    task_run(regen_556RU6,2,1);
+
+}
+
+

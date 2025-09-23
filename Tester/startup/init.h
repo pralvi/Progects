@@ -36,6 +36,9 @@ extern "C" {
 
 #define CMD_MAX_SIZE 16
 
+#define MODE_NONE 0
+#define MODE_556RU6 1
+
 //DATA
 #define DATA0      A, 0
 #define DATA1      A, 1
@@ -61,10 +64,10 @@ extern "C" {
 #define ADR10     B, 10
 
 //CONTROL
-#define CTL0      B, 12
+#define CTL0      B, 15
 #define CTL1      B, 13
 #define CTL2      B, 14
-#define CTL3      B, 15
+#define CTL3      B, 12
 #define CTL4      A, 8
 
 //USART Pins
@@ -76,7 +79,7 @@ extern "C" {
 #define USBD2_PIN          A, 12
 
 extern void InitHardware();
-
+uint8_t tester_mode;
 extern volatile uint32_t tick;
 static inline uint32_t GetSysTick() { return tick; }
 uint64_t GetMicroseconds();

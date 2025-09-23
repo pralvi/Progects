@@ -1,5 +1,7 @@
 #include "init.h"
 
+uint8_t tester_mode;
+
 struct usart_tx_buffer usart_tx_buf;
 struct usart_tx_buffer rpi_tx_buf;
 
@@ -115,6 +117,8 @@ void InitHardware() {
     init_gpio();
     init_usart(USART1, 115200, USART_Handler);
     __enable_irq();
+
+    tester_mode = MODE_NONE;
 
 }
 

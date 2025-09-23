@@ -54,6 +54,10 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
             case 'S': // Status
                 PrintText("SSS\r\n", tx_char);
             break;
+            case 'R': // Status
+                start_556RU6();
+                PrintText("556RU6\r\n", tx_char);
+            break;
 
             default:
                 PrintText("Unknown command\r\n", tx_char);
