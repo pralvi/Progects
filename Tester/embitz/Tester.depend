@@ -371,7 +371,7 @@
 	"init.h"
 	"commands.h"
 
-1758643445 d:\altium\progects\tester\startup\init.h
+1758810202 d:\altium\progects\tester\startup\init.h
 	"stm32.h"
 	"misc.h"
 	"gpio.h"
@@ -397,7 +397,7 @@
 
 1758642268 d:\altium\progects\tester\src\565ru6.h
 
-1758642287 source:d:\altium\progects\tester\src\565ru6.c
+1758655839 source:d:\altium\progects\tester\src\565ru6.c
 	"565RU6.h"
 	"init.h"
 
@@ -424,10 +424,10 @@
 1676387676 d:\altium\progects\tester\inc\stm32f10x_i2c.h
 	"init.h"
 
-1676387676 source:d:\altium\progects\tester\src\can\stm_lib\src\stm32f10x_rcc.c
+1758653793 source:d:\altium\progects\tester\src\can\stm_lib\src\stm32f10x_rcc.c
 	"stm32f10x_rcc.h"
 
-1758642268 source:d:\altium\progects\tester\src\commands.c
+1758814358 source:d:\altium\progects\tester\src\commands.c
 	"commands.h"
 	"init.h"
 	"u2a.h"
@@ -441,6 +441,7 @@
 
 1676387676 source:d:\altium\progects\tester\startup\gcc_startup_stm32f10x_md.s
 
-1758642071 source:d:\altium\progects\tester\startup\init.c
+1758814638 source:d:\altium\progects\tester\startup\init.c
 	"init.h"
+	"stm32f10x_rcc.h"
 

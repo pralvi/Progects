@@ -80,6 +80,7 @@ uint8_t read_556RU6(uint16_t adr)
     Delay_us(1);
     SET_PIN(CAS , 1);
     SET_PIN(RAS , 1);
+    Delay_us(1);
     return GET_PIN(DO);
 }
 
@@ -97,6 +98,7 @@ void write_556RU6(uint16_t adr, uint8_t data)
     SET_PIN(WR , 1);
     SET_PIN(CAS , 1);
     SET_PIN(RAS , 1);
+    Delay_us(1);
 }
 
 void start_556RU6(void)

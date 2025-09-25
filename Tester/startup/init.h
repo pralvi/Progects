@@ -31,7 +31,7 @@ extern "C" {
 #define ABS(a) ((a) >= 0  ? (a) : (-(a)))
 
 //General definitions
-#define F_CPU          36000000UL	        // SYSCLK Frequency, Hz (internal generator)
+#define F_CPU          72000000UL	        // SYSCLK Frequency, Hz (internal generator)
 #define SysTimerTick   (F_CPU / 1000) - 1	// Sys Timer Tick is 1000 Hz (1mS)
 
 #define CMD_MAX_SIZE 16
@@ -39,36 +39,37 @@ extern "C" {
 #define MODE_NONE 0
 #define MODE_556RU6 1
 
-//DATA
-#define DATA0      A, 0
-#define DATA1      A, 1
-#define DATA2      A, 2
-#define DATA3      A, 3
-#define DATA4      A, 4
-#define DATA5      A, 5
-#define DATA6      A, 6
-#define DATA7      A, 7
+//DATA IN/OUT
+#define DATA0      B, 2
+#define DATA1      B, 3
+#define DATA2      B, 4
+#define DATA3      B, 6
+#define DATA4      B, 7
+#define DATA5      B, 8
+#define DATA6      B, 9
+#define DATA7      B, 10
 
 
-//ADR
-#define ADR0      B, 0
-#define ADR1      B, 1
-#define ADR2      B, 2
-#define ADR3      B, 3
-#define ADR4      B, 4
-#define ADR5      B, 5
-#define ADR6      B, 6
-#define ADR7      B, 7
-#define ADR8      B, 8
-#define ADR9      B, 9
-#define ADR10     B, 10
+//ADR AP6 OUT
+#define ADR0      A, 0
+#define ADR1      A, 1
+#define ADR2      A, 2
+#define ADR3      A, 3
+#define ADR4      A, 4
+#define ADR5      A, 5
+#define ADR6      A, 6
+#define ADR7      A, 7
 
-//CONTROL
-#define CTL0      B, 15
-#define CTL1      B, 13
-#define CTL2      B, 14
-#define CTL3      B, 12
-#define CTL4      A, 8
+//ADR CTL AP6 OUT
+#define ADR8      A, 8
+#define ADR9      B, 11
+#define ADR10     B, 12
+//CONTROL OUT
+#define CTL0      B, 0
+#define CTL1      B, 1
+#define CTL2      B, 5
+#define CTL3      B, 13
+#define CTL4      B, 14
 
 //USART Pins
 #define RX_PIN          A, 10   //USART1 RX
@@ -78,12 +79,14 @@ extern "C" {
 #define USBD1_PIN          A, 11
 #define USBD2_PIN          A, 12
 
+#define LED_PIN          C, 13
+
 extern void InitHardware();
 uint8_t tester_mode;
 extern volatile uint32_t tick;
 static inline uint32_t GetSysTick() { return tick; }
 uint64_t GetMicroseconds();
-void Delay_us(uint32_t Delay);
+void Delay_us(uint16_t Delay);
 
 #define USART_TX_BUF_SIZE 128
 RBUF_DECLARE(usart_tx_buffer, USART_TX_BUF_SIZE);

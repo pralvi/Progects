@@ -8,4 +8,4 @@ obj\debug\startup\init.o: ..\startup\init.c ..\startup\init.h \
  ..\drivers\CMSIS\Device\ST/STM32F1xx/Include/system_stm32f1xx.h \
  ..\inc/misc.h ..\inc/gpio.h ..\inc/stm32.h ..\src/usart.h \
  ..\startup/init.h ..\inc/ring_buf.h ..\src/dispatcher.h \
- ..\src/commands.h ..\src/565RU6.h
+ ..\src/commands.h ..\src/565RU6.h ..\inc/stm32f10x_rcc.h

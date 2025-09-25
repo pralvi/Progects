@@ -52,9 +52,12 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
         switch(cmd[0])
         {
             case 'S': // Status
-                PrintText("SSS\r\n", tx_char);
+                PrintText("tester\r\n", tx_char);
             break;
-            case 'R': // Status
+            case 'R': // reset
+                NVIC_SystemReset();
+            break;
+            case 'T': // ru6
                 start_556RU6();
                 PrintText("556RU6\r\n", tx_char);
             break;
