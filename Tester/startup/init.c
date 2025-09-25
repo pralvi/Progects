@@ -41,9 +41,10 @@ void Delay_us(uint16_t delay)
 
 
 
-static void init_rcc_36 (void) {
+static void init_rcc (void) {
     //Set SysClock to 36Mhz from HSI
-
+ // enable prefetch buffer and set flash latency 2WS for 72MHz
+    _BMD(FLASH->ACR, FLASH_ACR_PRFTBE| FLASH_ACR_LATENCY, FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2);
     //Enable Internal HS 8Mhz
     _BMD(RCC->CR, RCC_CR_HSION, RCC_CR_HSION);
     _WBS(RCC->CR, RCC_CR_HSIRDY); //Wait HSI ready
@@ -169,7 +170,7 @@ void InitHardware() {
 }
 
 void SystemInit(void) {
-    init_rcc_36();
+    init_rcc();
 
 }
 

@@ -55,7 +55,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
                 PrintText("tester\r\n", tx_char);
             break;
             case 'R': // reset
-                NVIC_SystemReset();
+                //NVIC_SystemReset();
             break;
             case 'T': // ru6
                 start_556RU6();
