@@ -75,39 +75,39 @@ static void init_rcc (void) {
 }
 
 
-static void init_rcc_72 (void) {
-    //Set SysClock to 72Mhz from HSE
-    // enable prefetch buffer and set flash latency 2WS for 72MHz
-    _BMD(FLASH->ACR, FLASH_ACR_PRFTBE| FLASH_ACR_LATENCY, FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2);
-
-    //Enable HSE
-    _BMD(RCC->CR, RCC_CR_HSEON, RCC_CR_HSEON);
-    _WBS(RCC->CR, RCC_CR_HSERDY); //Wait HSE ready
-
-    _BMD(RCC->CFGR,
-         RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL | RCC_CFGR_PPRE1 | RCC_CFGR_ADCPRE,
-         RCC_CFGR_PLLSRC        //PLL Source is HSE
-       | RCC_CFGR_PLLMULL9      //Multiply input clock by 9
-       | RCC_CFGR_PPRE1_DIV2    //APB1 prescaler is 2 (36MHz)
-                                //APB1 frequency should be between 10MHz and 36MHz in case if USB use
-       | RCC_CFGR_ADCPRE_DIV8   //ADCCLK = PCLK2 divided by 8 (9MHz)
-       );
-
-    //Enable PLL
-    _BST(RCC->CR, RCC_CR_PLLON);
-    _WBS(RCC->CR, RCC_CR_PLLRDY); //Wait HSE ready
-
-    //Select PLL
-    _BMD(RCC->CFGR, RCC_CFGR_SW, RCC_CFGR_SW_PLL);
-    _WBS(RCC->CFGR, RCC_CFGR_SWS_PLL); // Wait PLL selected
-
-    //Configure SysTick Timer
-    SysTick->LOAD = SysTimerTick;		// Load SysTimer period
-    SysTick->VAL = SysTimerTick;		// Clear SysTimer counter
-
-    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk
-        | SysTick_CTRL_ENABLE_Msk;// Start timer
-}
+//static void init_rcc_72 (void) {
+//    //Set SysClock to 72Mhz from HSE
+//    // enable prefetch buffer and set flash latency 2WS for 72MHz
+//    _BMD(FLASH->ACR, FLASH_ACR_PRFTBE| FLASH_ACR_LATENCY, FLASH_ACR_PRFTBE | FLASH_ACR_LATENCY_2);
+//
+//    //Enable HSE
+//    _BMD(RCC->CR, RCC_CR_HSEON, RCC_CR_HSEON);
+//    _WBS(RCC->CR, RCC_CR_HSERDY); //Wait HSE ready
+//
+//    _BMD(RCC->CFGR,
+//         RCC_CFGR_PLLSRC | RCC_CFGR_PLLMULL | RCC_CFGR_PPRE1 | RCC_CFGR_ADCPRE,
+//         RCC_CFGR_PLLSRC        //PLL Source is HSE
+//       | RCC_CFGR_PLLMULL9      //Multiply input clock by 9
+//       | RCC_CFGR_PPRE1_DIV2    //APB1 prescaler is 2 (36MHz)
+//                                //APB1 frequency should be between 10MHz and 36MHz in case if USB use
+//       | RCC_CFGR_ADCPRE_DIV8   //ADCCLK = PCLK2 divided by 8 (9MHz)
+//       );
+//
+//    //Enable PLL
+//    _BST(RCC->CR, RCC_CR_PLLON);
+//    _WBS(RCC->CR, RCC_CR_PLLRDY); //Wait HSE ready
+//
+//    //Select PLL
+//    _BMD(RCC->CFGR, RCC_CFGR_SW, RCC_CFGR_SW_PLL);
+//    _WBS(RCC->CFGR, RCC_CFGR_SWS_PLL); // Wait PLL selected
+//
+//    //Configure SysTick Timer
+//    SysTick->LOAD = SysTimerTick;		// Load SysTimer period
+//    SysTick->VAL = SysTimerTick;		// Clear SysTimer counter
+//
+//    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk
+//        | SysTick_CTRL_ENABLE_Msk;// Start timer
+//}
 
 void init_gpio(void) {
 

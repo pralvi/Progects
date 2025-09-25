@@ -923,8 +923,6 @@ Discarded input sections
                 0x00000000       0xb4 obj\debug\startup\init.o
  .text.Delay_us2
                 0x00000000       0x3a obj\debug\startup\init.o
- .text.init_rcc_72
-                0x00000000       0xa8 obj\debug\startup\init.o
  .debug_macro   0x00000000      0xaba obj\debug\startup\init.o
  .debug_macro   0x00000000       0x34 obj\debug\startup\init.o
  .debug_macro   0x00000000       0x28 obj\debug\startup\init.o
@@ -1286,10 +1284,10 @@ LOAD c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eab
  .bss.handlers  0x2000014c        0xc obj\debug\src\usart.o
  .bss.tick      0x20000158        0x4 obj\debug\startup\init.o
                 0x20000158                tick
- .bss.cmdIdx.5190
+ .bss.cmdIdx.5178
                 0x2000015c        0x1 obj\debug\startup\init.o
  *fill*         0x2000015d        0x3 
- .bss.buf.5189  0x20000160       0x10 obj\debug\startup\init.o
+ .bss.buf.5177  0x20000160       0x10 obj\debug\startup\init.o
  *(COMMON)
  COMMON         0x20000170        0x1 obj\debug\main.o
                 0x20000170                tester_mode
@@ -1396,7 +1394,7 @@ LOAD linker stubs
  .comment       0x0000004c       0x4d obj\debug\src\usart.o
  .comment       0x0000004c       0x4d obj\debug\startup\init.o
 
-.debug_info     0x00000000     0x2857
+.debug_info     0x00000000     0x2845
  .debug_info    0x00000000      0x1e1 obj\debug\main.o
  .debug_info    0x000001e1      0x33b obj\debug\src\565ru6.o
  .debug_info    0x0000051c      0x672 obj\debug\src\atomic.o
@@ -1404,7 +1402,7 @@ LOAD linker stubs
  .debug_info    0x00000f9e      0x5ce obj\debug\src\dispatcher.o
  .debug_info    0x0000156c      0x93e obj\debug\src\usart.o
  .debug_info    0x00001eaa       0x26 obj\debug\startup\gcc_startup_stm32f10x_md.o
- .debug_info    0x00001ed0      0x987 obj\debug\startup\init.o
+ .debug_info    0x00001ed0      0x975 obj\debug\startup\init.o
 
 .debug_abbrev   0x00000000      0xd84
  .debug_abbrev  0x00000000      0x119 obj\debug\main.o
@@ -1416,7 +1414,7 @@ LOAD linker stubs
  .debug_abbrev  0x00000ac4       0x14 obj\debug\startup\gcc_startup_stm32f10x_md.o
  .debug_abbrev  0x00000ad8      0x2ac obj\debug\startup\init.o
 
-.debug_aranges  0x00000000      0x260
+.debug_aranges  0x00000000      0x258
  .debug_aranges
                 0x00000000       0x20 obj\debug\main.o
  .debug_aranges
@@ -1432,16 +1430,16 @@ LOAD linker stubs
  .debug_aranges
                 0x000001c8       0x20 obj\debug\startup\gcc_startup_stm32f10x_md.o
  .debug_aranges
-                0x000001e8       0x78 obj\debug\startup\init.o
+                0x000001e8       0x70 obj\debug\startup\init.o
 
-.debug_ranges   0x00000000      0x1d0
+.debug_ranges   0x00000000      0x1c8
  .debug_ranges  0x00000000       0x10 obj\debug\main.o
  .debug_ranges  0x00000010       0x40 obj\debug\src\565ru6.o
  .debug_ranges  0x00000050       0x30 obj\debug\src\atomic.o
  .debug_ranges  0x00000080       0x40 obj\debug\src\commands.o
  .debug_ranges  0x000000c0       0x60 obj\debug\src\dispatcher.o
  .debug_ranges  0x00000120       0x48 obj\debug\src\usart.o
- .debug_ranges  0x00000168       0x68 obj\debug\startup\init.o
+ .debug_ranges  0x00000168       0x60 obj\debug\startup\init.o
 
 .debug_macro    0x00000000      0xb60
  .debug_macro   0x00000000      0x139 obj\debug\main.o
@@ -1458,7 +1456,7 @@ LOAD linker stubs
  .debug_macro   0x000008e1      0x136 obj\debug\src\usart.o
  .debug_macro   0x00000a17      0x149 obj\debug\startup\init.o
 
-.debug_line     0x00000000     0x231f
+.debug_line     0x00000000     0x22d7
  .debug_line    0x00000000      0x351 obj\debug\main.o
  .debug_line    0x00000351      0x59d obj\debug\src\565ru6.o
  .debug_line    0x000008ee      0x4d5 obj\debug\src\atomic.o
@@ -1466,9 +1464,9 @@ LOAD linker stubs
  .debug_line    0x00001201      0x5f1 obj\debug\src\dispatcher.o
  .debug_line    0x000017f2      0x4f5 obj\debug\src\usart.o
  .debug_line    0x00001ce7       0xb3 obj\debug\startup\gcc_startup_stm32f10x_md.o
- .debug_line    0x00001d9a      0x585 obj\debug\startup\init.o
+ .debug_line    0x00001d9a      0x53d obj\debug\startup\init.o
 
-.debug_str      0x00000000    0x585c1
+.debug_str      0x00000000    0x585b5
  .debug_str     0x00000000    0x55d3b obj\debug\main.o
                               0x55f72 (size before relaxing)
  .debug_str     0x00055d3b       0x9a obj\debug\src\565ru6.o
@@ -1483,18 +1481,18 @@ LOAD linker stubs
                               0x56421 (size before relaxing)
  .debug_str     0x00056538       0x34 obj\debug\startup\gcc_startup_stm32f10x_md.o
                                  0x55 (size before relaxing)
- .debug_str     0x0005656c     0x2055 obj\debug\startup\init.o
-                              0x58050 (size before relaxing)
+ .debug_str     0x0005656c     0x2049 obj\debug\startup\init.o
+                              0x58044 (size before relaxing)
 
-.debug_frame    0x00000000      0x828
+.debug_frame    0x00000000      0x808
  .debug_frame   0x00000000       0x30 obj\debug\main.o
  .debug_frame   0x00000030      0x108 obj\debug\src\565ru6.o
  .debug_frame   0x00000138       0xd8 obj\debug\src\atomic.o
  .debug_frame   0x00000210      0x114 obj\debug\src\commands.o
  .debug_frame   0x00000324      0x198 obj\debug\src\dispatcher.o
  .debug_frame   0x000004bc      0x124 obj\debug\src\usart.o
- .debug_frame   0x000005e0      0x1b4 obj\debug\startup\init.o
- .debug_frame   0x00000794       0x28 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x000007bc       0x2c c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
- .debug_frame   0x000007e8       0x20 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
- .debug_frame   0x00000808       0x20 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .debug_frame   0x000005e0      0x194 obj\debug\startup\init.o
+ .debug_frame   0x00000774       0x28 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000079c       0x2c c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000007c8       0x20 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x000007e8       0x20 c:/program files (x86)/embitz/2.50/share/armgcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
