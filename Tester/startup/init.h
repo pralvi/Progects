@@ -31,7 +31,7 @@ extern "C" {
 #define ABS(a) ((a) >= 0  ? (a) : (-(a)))
 
 //General definitions
-#define F_CPU          72000000UL	        // SYSCLK Frequency, Hz (internal generator)
+#define F_CPU          36000000UL	        // SYSCLK Frequency, Hz (internal generator)
 #define SysTimerTick   (F_CPU / 1000) - 1	// Sys Timer Tick is 1000 Hz (1mS)
 
 #define CMD_MAX_SIZE 16
