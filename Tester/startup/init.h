@@ -19,6 +19,8 @@ extern "C" {
 
 #include "565RU6.h"
 
+
+
 #define USART3_BASE                 (APB1PERIPH_BASE + 0x00004800U)
 #define USART3                      ((USART_TypeDef *)USART3_BASE)
 #define USART3_IRQn                 39
@@ -31,7 +33,7 @@ extern "C" {
 #define ABS(a) ((a) >= 0  ? (a) : (-(a)))
 
 //General definitions
-#define F_CPU          36000000UL	        // SYSCLK Frequency, Hz (internal generator)
+#define F_CPU          72000000UL	        // SYSCLK Frequency, Hz (internal generator)
 #define SysTimerTick   (F_CPU / 1000) - 1	// Sys Timer Tick is 1000 Hz (1mS)
 
 #define CMD_MAX_SIZE 16

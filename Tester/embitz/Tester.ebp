@@ -76,7 +76,6 @@
 			<Add symbol="USBD_SOF_DISABLED" />
 			<Add symbol="CDC_USE_IRQ" />
 			<Add symbol="C11_SUPPORT" />
-			<Add symbol="USBD_STM32F103" />
 			<Add directory=".\.." />
 			<Add directory=".\..\inc" />
 			<Add directory=".\..\src" />
@@ -117,15 +116,11 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\src\atomic.h" />
-		<Unit filename="..\src\CAN\stm_lib\inc\stm32f10x_can.h" />
-		<Unit filename="..\src\CAN\stm_lib\inc\stm32f10x_i2c.h" />
+		<Unit filename="..\src\bridge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\bridge.h" />
 		<Unit filename="..\src\CAN\stm_lib\inc\stm32f10x_rcc.h" />
-		<Unit filename="..\src\CAN\stm_lib\src\stm32f10x_can.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\src\CAN\stm_lib\src\stm32f10x_i2c.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="..\src\CAN\stm_lib\src\stm32f10x_rcc.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -148,6 +143,60 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\startup\init.h" />
+		<Unit filename="..\usb\cdc\cdc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\cdc\cdc.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_button.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_desktop.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_device.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_game.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_keyboard.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_led.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_ordinal.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_simulation.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_sport.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_telephony.h" />
+		<Unit filename="..\usb\lib\inc\hid_usage_vr.h" />
+		<Unit filename="..\usb\lib\inc\usb.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdc.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdca.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdce.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdci.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdcp.h" />
+		<Unit filename="..\usb\lib\inc\usb_cdcw.h" />
+		<Unit filename="..\usb\lib\inc\usb_dfu.h" />
+		<Unit filename="..\usb\lib\inc\usb_hid.h" />
+		<Unit filename="..\usb\lib\inc\usb_std.h" />
+		<Unit filename="..\usb\lib\inc\usbd_core.h" />
+		<Unit filename="..\usb\lib\src\memmap.inc" />
+		<Unit filename="..\usb\lib\src\usbd_core.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32f103_devfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32f103_devfs_asm.S">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32f429_otgfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32l052_devfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32l052_devfs_asm.S">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32l100_devfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32l100_devfs_asm.S">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\usb\lib\src\usbd_stm32l476_otgfs.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger>

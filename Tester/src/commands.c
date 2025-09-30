@@ -2,19 +2,14 @@
 #include "init.h"
 
 #include "u2a.h"
-
-
-
-static char*    CAN_responce_buf;
-static uint8_t  CAN_responce_idx;
-void TX_CharCAN(char c) {
-    if (CAN_responce_idx < 8)
-        if (c != '\r' && c != '\n')
-            CAN_responce_buf[CAN_responce_idx++] = c;
-}
+#include "bridge.h"
 
 void TX_CharUART(char c) {
     RBUF_WRITE(usart_tx_buf, c);
+}
+
+void TX_CB(char c) {
+    CDC_TX_CHAR(c);
 }
 
 void PrintText(char* text, void tx_char(char)) {
@@ -44,10 +39,11 @@ void PrintBool(char* prefix, uint8_t val, void tx_char(char)) {
     }
 }
 
-uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
+uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
     if (cmd_size) {
         void (*tx_char)(char);
-        tx_char = TX_CharUART;
+        //tx_char = TX_CharUART;
+        tx_char = TX_CB;
 
         switch(cmd[0])
         {
@@ -55,10 +51,11 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
                 PrintText("tester\r\n", tx_char);
             break;
             case 'R': // reset
-                //NVIC_SystemReset();
+                NVIC_SystemReset();
             break;
             case 'T': // ru6
                 start_556RU6();
+                SET_PIN(LED_PIN, 0);
                 PrintText("556RU6\r\n", tx_char);
             break;
 
@@ -66,7 +63,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size, uint8_t* responce) {
                 PrintText("Unknown command\r\n", tx_char);
             break;
         }
-        usart_transmit(USART1);
+        //usart_transmit(USART1);
     }
     return 0;
 }
