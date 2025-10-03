@@ -42,6 +42,7 @@ void Delay_us(uint16_t delay)
     while ((TIM1->CR1 & TIM_CR1_CEN)!=0);   // ждем пока тикает
 }
 
+
 void Delay_ns(uint16_t delay)
 {
     uint32_t prescaler = (F_CPU / 1000000) - 1;
@@ -53,7 +54,6 @@ void Delay_ns(uint16_t delay)
     TIM1->CR1 = TIM_CR1_CEN|TIM_CR1_OPM;    // включаем режим одного импульса
     while ((TIM1->CR1 & TIM_CR1_CEN)!=0);   // ждем пока тикает
 }
-
 
 //static void init_rcc_36 (void) {
 //    //Set SysClock to 36Mhz from HSI

@@ -15,6 +15,7 @@ void init_565RU6(void)
 
     SET_PIN(RAS , 1);
     SET_PIN(CAS , 1);
+    SET_PIN(WR , 1);
     SET_PIN(DI , 1);
 
     CFG_PIN(ADR0, OUTPUT, PUSHPULL | SLOPE_2MHZ);
@@ -28,6 +29,7 @@ void init_565RU6(void)
 
     CFG_PIN(RAS, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(CAS, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(WR, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(DI, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(DO, INPUT, FLOATING);
 
@@ -57,15 +59,16 @@ void set_hi_adr_556RU6(uint16_t adr)
 
 void regen_556RU6(uint8_t tag) // 128 * 2us = 256us cycle
 {
+    __disable_irq();
     for (uint8_t i = 0; i <128; i++)
     {
         set_lo_adr_556RU6(i);
         SET_PIN(RAS , 0);
-        Delay_us(1);
+        //Delay_us(1);
         SET_PIN(RAS , 1);
-        Delay_us(1);
+        //Delay_us(1);
     }
-
+__enable_irq();
 }
 
 uint8_t read_556RU6(uint16_t adr)

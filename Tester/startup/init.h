@@ -42,36 +42,36 @@ extern "C" {
 #define MODE_556RU6 1
 
 //DATA IN/OUT
-#define DATA0      B, 2
-#define DATA1      B, 3
-#define DATA2      B, 4
-#define DATA3      B, 6
+#define DATA0      B, 11
+#define DATA1      B, 10
+#define DATA2      B, 9
+#define DATA3      B, 8
 #define DATA4      B, 7
-#define DATA5      B, 8
-#define DATA6      B, 9
-#define DATA7      B, 10
+#define DATA5      B, 6
+#define DATA6      B, 4
+#define DATA7      B, 3
 
 
-//ADR AP6 OUT
-#define ADR0      A, 0
-#define ADR1      A, 1
-#define ADR2      A, 2
-#define ADR3      A, 3
-#define ADR4      A, 4
-#define ADR5      A, 5
-#define ADR6      A, 6
-#define ADR7      A, 7
+//ADR AP6 OUT          //AP6: 1,20 to 5V  10,18 to GND
+#define ADR0      A, 0 //DD2 AP6 9in 11out
+#define ADR1      A, 1 //DD2 AP6 8in 12out
+#define ADR2      A, 2 //DD2 AP6 7in 13out
+#define ADR3      A, 3 //DD2 AP6 6in 14out
+#define ADR4      A, 4 //DD2 AP6 5in 15out
+#define ADR5      A, 5 //DD2 AP6 4in 16out
+#define ADR6      A, 6 //DD2 AP6 3in 17out
+#define ADR7      A, 7 //DD2 AP6 2in 18out
 
 //ADR CTL AP6 OUT
-#define ADR8      A, 8
-#define ADR9      B, 11
-#define ADR10     B, 12
+#define ADR8      B, 0 //DD1 AP6 9in 11out
+#define ADR9      B, 1 //DD1 AP6 8in 12out
+#define ADR10     B, 5 //DD1 AP6 7in 13out
 //CONTROL OUT
-#define CTL0      B, 0
-#define CTL1      B, 1
-#define CTL2      B, 5
-#define CTL3      B, 13
-#define CTL4      B, 14
+#define CTL0      B, 12 //DD1 AP6 2in 18out
+#define CTL1      B, 13 //DD1 AP6 3in 17out
+#define CTL2      B, 14 //DD1 AP6 4in 16out
+#define CTL3      B, 15 //DD1 AP6 5in 15out
+#define CTL4      A, 8  //DD1 AP6 6in 14out
 
 //USART Pins
 #define RX_PIN          A, 10   //USART1 RX
