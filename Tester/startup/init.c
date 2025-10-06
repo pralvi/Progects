@@ -35,21 +35,14 @@ void Delay_us2(uint16_t Delay)
 
 void Delay_us(uint16_t delay)
 {
+    uint16_t counter = delay;
+    while(counter)
+    {
+        counter--;
+    }
+    return;
     TIM1->PSC = (F_CPU / 1000000) - 1;      // установка предделителя таймера (период 1 us)
     TIM1->ARR = delay;                      // количество периодов
-    TIM1->EGR = TIM_EGR_UG;                 // генерируем событие обновления
-    TIM1->CR1 = TIM_CR1_CEN|TIM_CR1_OPM;    // включаем режим одного импульса
-    while ((TIM1->CR1 & TIM_CR1_CEN)!=0);   // ждем пока тикает
-}
-
-
-void Delay_ns(uint16_t delay)
-{
-    uint32_t prescaler = (F_CPU / 1000000) - 1;
-    prescaler = (prescaler * delay) / 1000;
-    if (prescaler == 0) prescaler = 1;
-    TIM1->PSC = prescaler;
-    TIM1->ARR = 1;                           // количество периодов
     TIM1->EGR = TIM_EGR_UG;                 // генерируем событие обновления
     TIM1->CR1 = TIM_CR1_CEN|TIM_CR1_OPM;    // включаем режим одного импульса
     while ((TIM1->CR1 & TIM_CR1_CEN)!=0);   // ждем пока тикает

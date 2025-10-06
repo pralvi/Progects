@@ -59,16 +59,26 @@ void set_hi_adr_556RU6(uint16_t adr)
 
 void regen_556RU6(uint8_t tag) // 128 * 2us = 256us cycle
 {
-    __disable_irq();
-    for (uint8_t i = 0; i <128; i++)
+    static uint8_t refresh = 0;
+    refresh ^=1;
+    if (refresh)
     {
-        set_lo_adr_556RU6(i);
-        SET_PIN(RAS , 0);
-        //Delay_us(1);
-        SET_PIN(RAS , 1);
-        //Delay_us(1);
-    }
+__disable_irq();
+        for (uint8_t i = 0; i <128; i++)
+        {
+            set_lo_adr_556RU6(i);
+            SET_PIN(RAS , 0);
+            Delay_us(1);
+            SET_PIN(RAS , 1);
+            Delay_us(1);
+        }
 __enable_irq();
+    }
+    else
+    {
+
+    }
+
 }
 
 uint8_t read_556RU6(uint16_t adr)
@@ -109,7 +119,7 @@ void start_556RU6(void)
     if (tester_mode == MODE_556RU6) return;
     tester_mode = MODE_556RU6;
     init_565RU6();
-    task_run(regen_556RU6,2,1);
+    task_run(regen_556RU6,1,1);
 
 }
 
