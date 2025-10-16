@@ -99,7 +99,7 @@ void itoaLTRCB(int32_t value, void CB(char)) {
 }
 
 void utoHexCB(uint32_t value, void CB(char)) {
-    CB('0');CB('x');
+    //CB('0');CB('x');
     if (value) {
         uint8_t leading = 1;
         for(int i = 0; i < 8; i++) {

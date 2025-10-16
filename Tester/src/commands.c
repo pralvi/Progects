@@ -29,6 +29,13 @@ void PrintFloat(char* prefix, float val, void tx_char(char)) {
     tx_char(' ');
 }
 
+void PrintHex(char* prefix, int32_t val, void tx_char(char)) {
+    PrintText(prefix, tx_char);
+    utoHexCB(val, tx_char);
+    tx_char(' ');
+}
+
+
 void PrintBool(char* prefix, uint8_t val, void tx_char(char)) {
     PrintText(prefix, tx_char);
     uint8_t a = 0b10000000;
@@ -50,13 +57,45 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
             case 'S': // Status
                 PrintText("tester\r\n", tx_char);
             break;
-            case 'R': // reset
-                NVIC_SystemReset();
-            break;
+//            case 'R': // reset
+//                NVIC_SystemReset();
+//            break;
             case 'T': // ru6
                 start_556RU6();
                 SET_PIN(LED_PIN, 0);
+                cycle_test ^= 1;
                 PrintText("556RU6\r\n", tx_char);
+            break;
+            case 'R': // ru6
+                if (RU6_mode == RU6_NONE)
+                {
+                    start_556RU6();
+                    SET_PIN(LED_PIN, 0);
+                }
+
+                if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                {
+                    RU6_mode = RU6_READ;
+                }
+
+                Clear_Buffer();
+                PrintText("556RU6 READ\r\n", tx_char);
+            break;
+             case 'W': // ru6
+                 if (RU6_mode == RU6_NONE)
+                {
+                    start_556RU6();
+                    SET_PIN(LED_PIN, 0);
+                }
+                 if (cmd_size >= 2)
+                 {
+                     RU6_write_mode = parseFloat((uint8_t*)&cmd[1]);
+                 }
+                if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                {
+                    RU6_mode = RU6_WRITE;
+                }
+                PrintText("556RU6 WRITE\r\n", tx_char);
             break;
 
             default:

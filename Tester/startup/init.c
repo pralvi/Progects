@@ -6,6 +6,8 @@
 
 uint8_t tester_mode;
 
+uint8_t device_buffer[2048] = {0};
+
 struct usart_tx_buffer usart_tx_buf;
 struct usart_tx_buffer rpi_tx_buf;
 
@@ -24,6 +26,17 @@ uint64_t GetMicroseconds() {
 
     return (uint64_t)t * 1000 + (SysTimerTick - val) / 36;
 }
+
+
+void Clear_Buffer(void)
+{
+   for (uint16_t i = 0; i < 2048 ; i++)
+        device_buffer[i] = 0;
+}
+
+
+
+
 
 void Delay_us2(uint16_t Delay)
 {
