@@ -55,7 +55,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
         switch(cmd[0])
         {
             case 'S': // Status
-                PrintText("tester\r\n", tx_char);
+                PrintText("tester\n", tx_char);
             break;
 
             case 'R': // ru6
@@ -64,7 +64,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                    start_556RU6();
                     SET_PIN(LED_PIN, 0);
                     cycle_test ^= 1;
-                    PrintText("556RU6 cycle\r\n", tx_char);
+                    PrintText("556RU6 cycle\n", tx_char);
                 }
                 if(cmd[1] == 'R')
                 {
@@ -75,7 +75,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                         RU6_mode = RU6_READ;
                     }
                     Clear_Buffer();
-                    PrintText("556RU6 READ\r\n", tx_char);
+                    PrintText("556RU6 READ\n", tx_char);
                 }
                 if(cmd[1] == 'W')
                 {
@@ -89,21 +89,29 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                     {
                         RU6_mode = RU6_WRITE;
                     }
-                    PrintText("556RU6 WRITE\r\n", tx_char);
+                    PrintText("556RU6 WRITE\n", tx_char);
                 }
             break;
             case 'T': // rtx
+                if(cmd[1] == '4')
+                {
+                    tester_mode = MODE_556RT4;
+                    init_556RTx();
+                    SET_PIN(LED_PIN, 0);
+                    PrintText("556RT4 \n", tx_char);
+                    read_RTx();
+                }
                 if(cmd[1] == '5')
                 {
                     tester_mode = MODE_556RT5;
                     init_556RTx();
                     SET_PIN(LED_PIN, 0);
-                    PrintText("556RT5 \r\n", tx_char);
+                    PrintText("556RT5 \n", tx_char);
                     read_RTx();
                 }
             break;
             default:
-                PrintText("Unknown command\r\n", tx_char);
+                PrintText("Unknown command\n", tx_char);
             break;
         }
         //usart_transmit(USART1);

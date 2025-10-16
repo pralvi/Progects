@@ -129,7 +129,7 @@ void test_process_RU6(uint8_t frame)
         {
             PrintHex(" ", device_buffer[i],TX_CB);
             i++;
-            if (frame == 0) PrintText("\r\n", TX_CB);
+            if (frame == 0) PrintText("\n", TX_CB);
             if  (i == RU6BUFSIZE)
             {
                 i = 0;
@@ -144,7 +144,7 @@ void test_process_RU6(uint8_t frame)
         i = 0 ;
         if (RU6_mode == RU6_WRITE)
         {
-            PrintText("WRITE OK\r\n", TX_CB);
+            PrintText("WRITE OK\n", TX_CB);
             RU6_mode = RU6_NONE;
             return;
         }
@@ -222,7 +222,7 @@ void cycle_test_556RU6(uint8_t tag)
             result += device_buffer[i];
         }
          PrintInt("Result XOR = ",result, TX_CB);
-        PrintText("\r\n", TX_CB);
+        PrintText("\n", TX_CB);
         state = 0;
         break;
     }

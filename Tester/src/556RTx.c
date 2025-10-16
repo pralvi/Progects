@@ -85,19 +85,33 @@ uint8_t read_byte_RTx(uint16_t adr)
         SET_PIN(CS1 , 0);
         SET_PIN(CS2 , 0);
     }
-    for (uint8_t i = 0; i < 4 ; i++)
+     if (tester_mode == MODE_556RT5)
+    {
+        SET_PIN(CS1 , 0);
+        SET_PIN(CS2 , 0);
+    }
+    for (uint8_t i = 0; i < 8 ; i++)
     {
        SET_PIN(DATACTL0 , i & 1);
        SET_PIN(DATACTL1 , i & 2);
        SET_PIN(DATACTL2 , i & 4);
        Delay_us(2);
        Data |= GET_PIN(DATAIN) << i;
+
     }
     if (tester_mode == MODE_556RT4)
+    {
+        Data &= 0x0F;
+        SET_PIN(CS1 , 1);
+        SET_PIN(CS2 , 1);
+    }
+    if (tester_mode == MODE_556RT5)
     {
         SET_PIN(CS1 , 1);
         SET_PIN(CS2 , 1);
     }
+
+
     return Data;
 }
 
@@ -110,9 +124,9 @@ void task_send_RTx(uint8_t tag)
         if (counter == 0) PrintHex("", i,TX_CB);
         PrintHex(" ", device_buffer[i],TX_CB);
         counter++;
-        if (counter == 8)
+        if (counter == 16)
         {
-           PrintText("\r\n", TX_CB);
+           PrintText("\n", TX_CB);
            counter = 0;
         }
     i++;

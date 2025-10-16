@@ -21,8 +21,6 @@ extern "C" {
 
 #define DATAIN      DATA0 //
 
-#define RT4_ADR_MAX 0xFF
-
 #define RT4BUFSIZE 256
 #define RT5BUFSIZE 512
 #define RT17BUFSIZE 512
