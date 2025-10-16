@@ -185,6 +185,7 @@ void InitHardware() {
 
     tester_mode = MODE_NONE;
 
+
 }
 
 void SystemInit(void) {

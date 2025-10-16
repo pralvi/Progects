@@ -130,7 +130,7 @@ void test_process_RU6(uint8_t frame)
             PrintHex(" ", device_buffer[i],TX_CB);
             i++;
             if (frame == 0) PrintText("\r\n", TX_CB);
-            if  (i == 2048)
+            if  (i == RU6BUFSIZE)
             {
                 i = 0;
                 RU6_mode = RU6_NONE;
@@ -181,6 +181,58 @@ __enable_irq();
 }
 
 
+
+
+void cycle_test_556RU6(uint8_t tag)
+{
+    static uint8_t state = 0;
+    if (cycle_test == 0)
+    {
+        state = 0;
+        return;
+    }
+
+    if (RU6_mode != RU6_NONE) return;
+
+    switch (state)
+    {
+    case 0:
+    {
+        RU6_mode = RU6_WRITE;
+        state = 1;
+        break;
+    }
+    case 1:
+    {
+        RU6_mode = RU6_READ;
+        Clear_Buffer();
+        RU6_write_mode++;
+        RU6_write_mode &= 3;
+
+        state = 2;
+        break;
+    }
+    case 2:
+    {
+        uint8_t Data = device_buffer[0];
+        uint64_t result = 0;
+        for (uint16_t i=0; i < RU6BUFSIZE; i++)
+        {
+            device_buffer[i] ^= Data;
+            result += device_buffer[i];
+        }
+         PrintInt("Result XOR = ",result, TX_CB);
+        PrintText("\r\n", TX_CB);
+        state = 0;
+        break;
+    }
+
+    }
+
+
+
+}
+
 void start_556RU6(void)
 {
     if (tester_mode == MODE_556RU6) return;
@@ -189,51 +241,7 @@ void start_556RU6(void)
     init_565RU6();
     Clear_Buffer();
     task_run(task_556RU6,1,1);
-
-}
-
-void cycle_test_556RU6(uint8_t tag)
-{
-    static uint8_t state = 0;
-    if (RU6_mode == RU6_NONE) return;
-    if (cycle_test == 0)
-    {
-        state = 0;
-        return;
-    }
-    switch (state)
-    {
-    case 0:
-    {
-        RU6_write_mode = 0;
-        RU6_mode = RU6_WRITE;
-        state = 1;
-        break;
-    }
-    case 1:
-    {
-        RU6_mode = RU6_READ;
-        state = 2;
-        break;
-    }
-    case 2:
-    {
-        RU6_mode = RU6_SEND;
-        RU6_write_mode++;
-        state = 0;
-        break;
-    }
-
-
-
-
-
-
-
-
-    }
-
+    task_run(cycle_test_556RU6,1000,1);
 
 
 }
-

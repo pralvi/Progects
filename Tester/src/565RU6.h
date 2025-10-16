@@ -28,7 +28,7 @@ extern "C" {
 
 #define RU6_ADR_MAX 0x3FFF
 
-
+#define RU6BUFSIZE 2048
 
 void start_556RU6(void);
 uint8_t RU6_mode;
@@ -68,7 +68,7 @@ uint8_t cycle_test;
 // 11 -| A4  |     |     |
 // 10 -| A5  |     |     |
 // 13 -| A6  |     |     |
-//  9 -| A7  |     |     |
+//     |     |     |     |
 //     |-----|     |     |
 //  4 -o RAS |     |     |
 // 15 -o CAS |     |     |

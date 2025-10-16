@@ -57,45 +57,42 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
             case 'S': // Status
                 PrintText("tester\r\n", tx_char);
             break;
-//            case 'R': // reset
-//                NVIC_SystemReset();
-//            break;
-            case 'T': // ru6
-                start_556RU6();
-                SET_PIN(LED_PIN, 0);
-                cycle_test ^= 1;
-                PrintText("556RU6\r\n", tx_char);
-            break;
+
             case 'R': // ru6
-                if (RU6_mode == RU6_NONE)
+                if(cmd[1] == 'C')
+                {
+                   start_556RU6();
+                    SET_PIN(LED_PIN, 0);
+                    cycle_test ^= 1;
+                    PrintText("556RU6 cycle\r\n", tx_char);
+                }
+                if(cmd[1] == 'R')
                 {
                     start_556RU6();
                     SET_PIN(LED_PIN, 0);
+                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                    {
+                        RU6_mode = RU6_READ;
+                    }
+                    Clear_Buffer();
+                    PrintText("556RU6 READ\r\n", tx_char);
                 }
-
-                if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
-                {
-                    RU6_mode = RU6_READ;
-                }
-
-                Clear_Buffer();
-                PrintText("556RU6 READ\r\n", tx_char);
-            break;
-             case 'W': // ru6
-                 if (RU6_mode == RU6_NONE)
+                if(cmd[1] == 'W')
                 {
                     start_556RU6();
                     SET_PIN(LED_PIN, 0);
+                    if (cmd_size >= 2)
+                    {
+                     RU6_write_mode = parseFloat((uint8_t*)&cmd[2]);
+                    }
+                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                    {
+                        RU6_mode = RU6_WRITE;
+                    }
+                    PrintText("556RU6 WRITE\r\n", tx_char);
+
                 }
-                 if (cmd_size >= 2)
-                 {
-                     RU6_write_mode = parseFloat((uint8_t*)&cmd[1]);
-                 }
-                if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
-                {
-                    RU6_mode = RU6_WRITE;
-                }
-                PrintText("556RU6 WRITE\r\n", tx_char);
+
             break;
 
             default:
