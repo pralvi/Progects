@@ -13,8 +13,11 @@ extern "C" {
 #define DATACTL0    CTL0 //
 #define DATACTL1    CTL1 //
 #define DATACTL2    CTL2 //
-#define CE          CTL3 //
-#define ON12V       CTL4 //
+#define CS1         CTL3 //
+#define CS2         CTL4 //
+#define ON12V       DATA1 //
+#define CS3         DATA2 //
+#define CS4         ADR10 //
 
 #define DATAIN      DATA0 //
 
@@ -28,7 +31,8 @@ extern "C" {
 // RT17 512x8
 // RT18 2048x8
 
-
+void read_RTx(void);
+void init_556RTx(void);
 //------------------------------------------------------------------------------
 #endif /* _556RTX_H_ */
 //------------------------------------------------------------------------------

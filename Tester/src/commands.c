@@ -90,11 +90,18 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                         RU6_mode = RU6_WRITE;
                     }
                     PrintText("556RU6 WRITE\r\n", tx_char);
-
                 }
-
             break;
-
+            case 'T': // rtx
+                if(cmd[1] == '5')
+                {
+                    tester_mode = MODE_556RT5;
+                    init_556RTx();
+                    SET_PIN(LED_PIN, 0);
+                    PrintText("556RT5 \r\n", tx_char);
+                    read_RTx();
+                }
+            break;
             default:
                 PrintText("Unknown command\r\n", tx_char);
             break;
