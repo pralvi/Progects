@@ -18,7 +18,7 @@ extern "C" {
 #include "commands.h"
 
 #include "565RU6.h"
-
+#include "556RTx.h"
 
 
 #define USART3_BASE                 (APB1PERIPH_BASE + 0x00004800U)
@@ -39,7 +39,15 @@ extern "C" {
 #define CMD_MAX_SIZE 16
 
 #define MODE_NONE 0
-#define MODE_556RU6 1
+
+#define MODE_565RU6 1
+
+#define MODE_556RT4 2
+#define MODE_556RT5 3
+#define MODE_556RT17 4
+#define MODE_556RT18 5
+
+
 
 //DATA IN/OUT
 #define DATA0      B, 11

@@ -108,6 +108,10 @@
 		<Unit filename="..\main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="..\src\556RTx.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\556RTx.h" />
 		<Unit filename="..\src\565RU6.c">
 			<Option compilerVar="CC" />
 		</Unit>

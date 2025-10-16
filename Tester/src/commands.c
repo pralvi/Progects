@@ -70,7 +70,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 {
                     start_556RU6();
                     SET_PIN(LED_PIN, 0);
-                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_565RU6))
                     {
                         RU6_mode = RU6_READ;
                     }
@@ -85,7 +85,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                     {
                      RU6_write_mode = parseFloat((uint8_t*)&cmd[2]);
                     }
-                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_556RU6))
+                    if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_565RU6))
                     {
                         RU6_mode = RU6_WRITE;
                     }

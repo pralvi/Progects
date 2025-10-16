@@ -235,8 +235,8 @@ void cycle_test_556RU6(uint8_t tag)
 
 void start_556RU6(void)
 {
-    if (tester_mode == MODE_556RU6) return;
-    tester_mode = MODE_556RU6;
+    if (tester_mode == MODE_565RU6) return;
+    tester_mode = MODE_565RU6;
     RU6_mode = RU6_NONE;
     init_565RU6();
     Clear_Buffer();
