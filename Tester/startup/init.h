@@ -47,7 +47,7 @@ extern "C" {
 #define MODE_556RT17 4
 #define MODE_556RT18 5
 
-
+#define ver 590kn6
 
 //DATA IN/OUT
 #define DATA0      B, 11
