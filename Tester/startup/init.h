@@ -103,6 +103,7 @@ extern volatile uint32_t tick;
 static inline uint32_t GetSysTick() { return tick; }
 uint64_t GetMicroseconds();
 void Delay_us(uint16_t Delay);
+void Delay_mks(uint16_t Delay);
 void Clear_Buffer(void);
 #define USART_TX_BUF_SIZE 128
 RBUF_DECLARE(usart_tx_buffer, USART_TX_BUF_SIZE);

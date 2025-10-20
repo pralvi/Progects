@@ -15,8 +15,7 @@ extern "C" {
 #define CS3         CTL2 //
 #define CS4         ADR10 //
 #define ON12V       CTL3 //
-
-
+#define CS1_RT4     DATA4 //
 
 
 
