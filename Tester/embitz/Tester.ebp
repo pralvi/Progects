@@ -136,6 +136,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="..\src\dispatcher.h" />
+		<Unit filename="..\src\firmwares.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="..\src\firmwares.h" />
 		<Unit filename="..\src\usart.c">
 			<Option compilerVar="CC" />
 		</Unit>

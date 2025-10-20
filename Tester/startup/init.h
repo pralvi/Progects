@@ -47,7 +47,7 @@ extern "C" {
 #define MODE_556RT17 4
 #define MODE_556RT18 5
 
-#define ver 590kn6
+#define ver 155LN3
 
 //DATA IN/OUT
 #define DATA0      B, 11
@@ -59,6 +59,14 @@ extern "C" {
 #define DATA6      B, 4
 #define DATA7      B, 3
 
+#define DIN0      B, 2
+#define DIN1      B, 15
+#define DIN2      A, 8
+#define DIN3      A, 9
+#define DIN4      A, 10
+#define DIN5      A, 15
+#define DIN6      C, 15
+#define DIN7      C, 14
 
 //ADR AP6 OUT          //AP6: 1,20 to 5V  10,18 to GND
 #define ADR0      A, 0 //DD2 AP6 9in 11out
@@ -78,8 +86,7 @@ extern "C" {
 #define CTL0      B, 12 //DD1 AP6 2in 18out
 #define CTL1      B, 13 //DD1 AP6 3in 17out
 #define CTL2      B, 14 //DD1 AP6 4in 16out
-#define CTL3      B, 15 //DD1 AP6 5in 15out
-#define CTL4      A, 8  //DD1 AP6 6in 14out
+#define CTL3      C, 13
 
 //USART Pins
 #define RX_PIN          A, 10   //USART1 RX
@@ -88,8 +95,6 @@ extern "C" {
 //USB
 #define USBD1_PIN          A, 11
 #define USBD2_PIN          A, 12
-
-#define LED_PIN          C, 13
 
 extern void InitHardware();
 uint8_t tester_mode;

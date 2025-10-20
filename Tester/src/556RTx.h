@@ -6,20 +6,19 @@ extern "C" {
 #define _556RTX_H_
 //------------------------------------------------------------------------------
 #include <stdint.h>
+#include "firmwares.h"
 
 
 
-
-#define DATACTL0    CTL0 //
-#define DATACTL1    CTL1 //
-#define DATACTL2    CTL2 //
-#define CS1         CTL3 //
-#define CS2         CTL4 //
-#define ON12V       DATA1 //
-#define CS3         DATA2 //
+#define CS1         CTL0 //
+#define CS2         CTL1 //
+#define CS3         CTL2 //
 #define CS4         ADR10 //
+#define ON12V       CTL3 //
 
-#define DATAIN      DATA0 //
+
+
+
 
 #define RT4BUFSIZE 256
 #define RT5BUFSIZE 512

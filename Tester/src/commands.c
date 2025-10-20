@@ -62,14 +62,14 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 if(cmd[1] == 'C')
                 {
                    start_556RU6();
-                    SET_PIN(LED_PIN, 0);
+
                     cycle_test ^= 1;
                     PrintText("556RU6 cycle\n", tx_char);
                 }
                 if(cmd[1] == 'R')
                 {
                     start_556RU6();
-                    SET_PIN(LED_PIN, 0);
+
                     if ((RU6_mode == RU6_NONE) && (tester_mode = MODE_565RU6))
                     {
                         RU6_mode = RU6_READ;
@@ -80,7 +80,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 if(cmd[1] == 'W')
                 {
                     start_556RU6();
-                    SET_PIN(LED_PIN, 0);
+
                     if (cmd_size >= 2)
                     {
                      RU6_write_mode = parseFloat((uint8_t*)&cmd[2]);
@@ -97,7 +97,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 {
                     tester_mode = MODE_556RT4;
                     init_556RTx();
-                    SET_PIN(LED_PIN, 0);
+
                     PrintText("556RT4 \n", tx_char);
                     read_RTx();
                 }
@@ -105,7 +105,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 {
                     tester_mode = MODE_556RT5;
                     init_556RTx();
-                    SET_PIN(LED_PIN, 0);
+
                     PrintText("556RT5 \n", tx_char);
                     read_RTx();
                 }

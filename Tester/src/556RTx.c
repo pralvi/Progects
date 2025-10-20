@@ -22,9 +22,15 @@ void init_556RTx(void)
     SET_PIN(ADR9 , 0);
     SET_PIN(ADR10 , 0); // FOR RT5 RT17 CS4 !!
 
-    SET_PIN(DATACTL0 , 0);
-    SET_PIN(DATACTL1 , 0);
-    SET_PIN(DATACTL2 , 0);
+    SET_PIN(DATA0 , 0);
+    SET_PIN(DATA1 , 0);
+    SET_PIN(DATA2 , 0);
+    SET_PIN(DATA3 , 0);
+    SET_PIN(DATA4 , 0);
+    SET_PIN(DATA5 , 0);
+    SET_PIN(DATA6 , 0);
+    SET_PIN(DATA7 , 0);
+
     SET_PIN(CS1 , 1);
     SET_PIN(CS2 , 1);
     SET_PIN(CS3 , 1);
@@ -43,16 +49,30 @@ void init_556RTx(void)
     CFG_PIN(ADR9, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(ADR10, OUTPUT, PUSHPULL | SLOPE_2MHZ);
 
-    CFG_PIN(DATACTL0, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-    CFG_PIN(DATACTL1, OUTPUT, PUSHPULL | SLOPE_2MHZ);
-    CFG_PIN(DATACTL2, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA0, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA1, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA2, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA3, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA4, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA5, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA6, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(DATA7, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+
     CFG_PIN(CS1, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(CS2, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(CS3, OUTPUT, PUSHPULL | SLOPE_2MHZ);
 
     CFG_PIN(ON12V, OUTPUT, PUSHPULL | SLOPE_2MHZ);
 
-    CFG_PIN(DATAIN, INPUT, FLOATING);
+
+    CFG_PIN(DIN0, INPUT, PULLUP);
+    CFG_PIN(DIN1, INPUT, PULLUP);
+    CFG_PIN(DIN2, INPUT, PULLUP);
+    CFG_PIN(DIN3, INPUT, PULLUP);
+    CFG_PIN(DIN4, INPUT, PULLUP);
+    CFG_PIN(DIN5, INPUT, PULLUP);
+    CFG_PIN(DIN6, INPUT, PULLUP);
+    CFG_PIN(DIN7, INPUT, PULLUP);
 
     if (tester_mode == MODE_556RT4) bufsize = RT4BUFSIZE;
     if (tester_mode == MODE_556RT5) bufsize = RT5BUFSIZE;
@@ -90,15 +110,17 @@ uint8_t read_byte_RTx(uint16_t adr)
         SET_PIN(CS1 , 0);
         SET_PIN(CS2 , 0);
     }
-    for (uint8_t i = 0; i < 8 ; i++)
-    {
-       SET_PIN(DATACTL0 , i & 1);
-       SET_PIN(DATACTL1 , i & 2);
-       SET_PIN(DATACTL2 , i & 4);
-       Delay_us(2);
-       Data |= GET_PIN(DATAIN) << i;
 
-    }
+    Data |=  GET_PIN(DIN0);
+    Data |=  GET_PIN(DIN1) << 1;
+    Data |=  GET_PIN(DIN2) << 2;
+    Data |=  GET_PIN(DIN3) << 3;
+    Data |=  GET_PIN(DIN4) << 4;
+    Data |=  GET_PIN(DIN5) << 5;
+    Data |=  GET_PIN(DIN6) << 6;
+    Data |=  GET_PIN(DIN7) << 7;
+
+
     if (tester_mode == MODE_556RT4)
     {
         Data &= 0x0F;

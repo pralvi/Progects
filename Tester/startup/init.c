@@ -136,47 +136,47 @@ void init_gpio(void) {
 
     // Disable JTAG and OSC_IN/OUT to extend the number of available GPIO pins. SWD remains enabled
     AFIO->MAPR = AFIO_MAPR_SWJ_CFG_JTAGDISABLE | AFIO_MAPR_PD01_REMAP;
-    SET_PIN(LED_PIN , 1);
-    CFG_PIN(LED_PIN, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+
+
 
 }
 
-static void ParseCommand(uint8_t c) {
-    static uint8_t buf[CMD_MAX_SIZE];
+//static void ParseCommand(uint8_t c) {
+//    static uint8_t buf[CMD_MAX_SIZE];
+//
+//    static uint8_t cmdIdx = 0;
+//
+//    if ((c == 0x0A) || (c == 0x0D)) {
+//        if (cmdIdx > 0) {
+//            buf[cmdIdx] = 0;
+//            ExecuteTextCommand((char*)buf, cmdIdx);
+//        }
+//        cmdIdx = 0;
+//    } else {
+//        buf[cmdIdx++] = c;
+//
+//        if (cmdIdx >= CMD_MAX_SIZE)
+//            cmdIdx = 0;
+//    }
+//}
 
-    static uint8_t cmdIdx = 0;
-
-    if ((c == 0x0A) || (c == 0x0D)) {
-        if (cmdIdx > 0) {
-            buf[cmdIdx] = 0;
-            ExecuteTextCommand((char*)buf, cmdIdx);
-        }
-        cmdIdx = 0;
-    } else {
-        buf[cmdIdx++] = c;
-
-        if (cmdIdx >= CMD_MAX_SIZE)
-            cmdIdx = 0;
-    }
-}
-
-static uint8_t USART_Handler(USART_TypeDef* usart, uint8_t event, uint8_t* data) {
-    if (event & USART_RX_EVENT)
-        ParseCommand(*data);
-
-    if (event & USART_TX_EVENT) {
-        if (RBUF_IS_EMPTY(usart_tx_buf))
-            return 0;
-
-        RBUF_READ(usart_tx_buf, *data);
-    }
-
-    return 1;
-}
+//static uint8_t USART_Handler(USART_TypeDef* usart, uint8_t event, uint8_t* data) {
+//    if (event & USART_RX_EVENT)
+//        ParseCommand(*data);
+//
+//    if (event & USART_TX_EVENT) {
+//        if (RBUF_IS_EMPTY(usart_tx_buf))
+//            return 0;
+//
+//        RBUF_READ(usart_tx_buf, *data);
+//    }
+//
+//    return 1;
+//}
 
 void InitHardware() {
     init_gpio();
-    init_usart(USART1, 115200, USART_Handler);
+    //init_usart(USART1, 115200, USART_Handler);
 
     //usbd_device* udev = InitCDC();
     InitCDC();
