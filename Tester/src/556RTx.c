@@ -6,6 +6,22 @@
 
 
 uint16_t bufsize;
+uint16_t write_adr = 0;
+uint8_t write_data = 0;
+
+
+void clear_data(void)
+{
+    SET_PIN(DATA0 , 0);
+    SET_PIN(DATA1 , 0);
+    SET_PIN(DATA2 , 0);
+    SET_PIN(DATA3 , 0);
+    SET_PIN(DATA4 , 0);
+    SET_PIN(DATA5 , 0);
+    SET_PIN(DATA6 , 0);
+    SET_PIN(DATA7 , 0);
+}
+
 
 void init_556RTx(void)
 {
@@ -22,14 +38,7 @@ void init_556RTx(void)
     SET_PIN(ADR9 , 0);
     SET_PIN(ADR10 , 0); // FOR RT5 RT17 CS4 !!
 
-    SET_PIN(DATA0 , 0);
-    SET_PIN(DATA1 , 0);
-    SET_PIN(DATA2 , 0);
-    SET_PIN(DATA3 , 0);
-    SET_PIN(DATA4 , 0);
-    SET_PIN(DATA5 , 0);
-    SET_PIN(DATA6 , 0);
-    SET_PIN(DATA7 , 0);
+    clear_data();
 
 
     SET_PIN(CS2 , 1);
@@ -77,8 +86,10 @@ void init_556RTx(void)
     if (tester_mode == MODE_556RT4)
     {
         bufsize = RT4BUFSIZE;
-        SET_PIN(CS1_RT4 , 0); // inverse
-        CFG_PIN(CS1_RT4, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+        //SET_PIN(CS1_RT4 , 0); // inverse
+       // CFG_PIN(CS1_RT4, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+        SET_PIN(CS1 , 1);
+        CFG_PIN(CS1, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     }
     if (tester_mode == MODE_556RT5)
     {
@@ -116,14 +127,18 @@ void program_byte_RTx(uint16_t adr, uint8_t data  )
         SET_PIN(DATA1 , (data >> 1) & 1);
         SET_PIN(DATA2 , (data >> 2) & 1);
         SET_PIN(DATA3 , (data >> 3) & 1);
-        SET_PIN(CS1_RT4 , 0);
+        //SET_PIN(CS1_RT4 , 0);
+        SET_PIN(CS1 , 0);
         SET_PIN(CS2 , 0);
         Delay_us(2);
         SET_PIN(ON12V , 1);
         Delay_mks(10);
         SET_PIN(ON12V , 0);
+        SET_PIN(CS1 , 1);
         SET_PIN(CS2 , 1);
-        Delay_mks(1000);
+        clear_data();
+        Delay_ms(1000);
+        PrintText("OK\n", TX_CB);
 
     }
      if (tester_mode == MODE_556RT5)
@@ -134,7 +149,10 @@ void program_byte_RTx(uint16_t adr, uint8_t data  )
 
 }
 
-
+void task_program_RTx(uint8_t tag)
+{
+    program_byte_RTx(write_adr,write_data);
+}
 
 uint8_t read_byte_RTx(uint16_t adr)
 {
@@ -143,7 +161,7 @@ uint8_t read_byte_RTx(uint16_t adr)
 
     if (tester_mode == MODE_556RT4)
     {
-        SET_PIN(CS1_RT4 , 1);
+        SET_PIN(CS1 , 0);
         SET_PIN(CS2 , 0);
     }
      if (tester_mode == MODE_556RT5)
@@ -165,7 +183,7 @@ uint8_t read_byte_RTx(uint16_t adr)
     if (tester_mode == MODE_556RT4)
     {
         Data &= 0x0F;
-        SET_PIN(CS1_RT4 , 0);
+        SET_PIN(CS1 , 1);
         SET_PIN(CS2 , 1);
     }
     if (tester_mode == MODE_556RT5)

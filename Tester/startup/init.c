@@ -36,14 +36,22 @@ void Clear_Buffer(void)
 
 
 
+void Delay_ms(uint32_t Delay)
+{
+  uint64_t tickstart = tick;
+  while ((tick - tickstart) <= Delay)
+  {
+  }
 
+}
 
-void Delay_mks(uint16_t Delay)
+void Delay_mks(uint32_t Delay)
 {
   uint64_t tickstart = GetMicroseconds();
   while ((GetMicroseconds() - tickstart) <= Delay)
   {
   }
+
 }
 
 void Delay_us(uint16_t delay)

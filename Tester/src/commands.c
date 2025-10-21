@@ -95,10 +95,31 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
             case 'T': // rtx
                 if(cmd[1] == '4')
                 {
-                    tester_mode = MODE_556RT4;
-                    init_556RTx();
+                    if (tester_mode != MODE_556RT4)
+                    {
+                        tester_mode = MODE_556RT4;
+                        init_556RTx();
+                    }
 
-                    PrintText("556RT4 \n", tx_char);
+                    if (cmd[2] == 'A')
+                    {
+                        write_adr = parseFloat((uint8_t*)&cmd[3]);
+                        PrintInt("ADR=", write_adr, tx_char);
+                        PrintText("\n", tx_char);
+                        break;
+                    }
+                    if (cmd[2] == 'D')
+                    {
+                        write_data = parseFloat((uint8_t*)&cmd[3]);
+                        task_runOnce(task_program_RTx,10,1);
+                        PrintInt("ADR=", write_adr, tx_char);
+                        PrintInt(" DATA=", write_data, tx_char);
+                        PrintText("\n", tx_char);
+                        break;
+
+                    }
+
+                    PrintText("556RT4 dump\n", tx_char);
                     read_RTx();
                 }
                 if(cmd[1] == '5')
