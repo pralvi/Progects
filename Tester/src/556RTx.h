@@ -32,6 +32,7 @@ void read_RTx(void);
 void init_556RTx(void);
 void program_byte_RTx(uint16_t adr, uint8_t data);
 void task_program_RTx(uint8_t tag);
+uint8_t read_byte_RTx(uint16_t adr);
 uint16_t write_adr;
 uint8_t write_data;
 //------------------------------------------------------------------------------

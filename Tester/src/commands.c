@@ -100,36 +100,54 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                         tester_mode = MODE_556RT4;
                         init_556RTx();
                     }
+                }
+                if(cmd[1] == '5')
+                {
+                    if (tester_mode != MODE_556RT5)
+                    {
+                        tester_mode = MODE_556RT5;
+                        init_556RTx();
+                    }
 
-                    if (cmd[2] == 'A')
+                }
+                    if (cmd[2] == 'A') //SET Adress
                     {
                         write_adr = parseFloat((uint8_t*)&cmd[3]);
                         PrintInt("ADR=", write_adr, tx_char);
                         PrintText("\n", tx_char);
                         break;
                     }
-                    if (cmd[2] == 'D')
+                    if (cmd[2] == 'D') // SET Data
                     {
                         write_data = parseFloat((uint8_t*)&cmd[3]);
-                        task_runOnce(task_program_RTx,10,1);
+                        PrintInt("ADR=", write_adr, tx_char);
+                        PrintInt(" DATA=", write_data, tx_char);
+                        PrintText("\n", tx_char);
+                        break;
+                    }
+                    if (cmd[2] == 'W')// Write one data to adress
+                    {
+                        write_data = parseFloat((uint8_t*)&cmd[3]);
+                        task_runOnce(task_program_RTx,10,3);
                         PrintInt("ADR=", write_adr, tx_char);
                         PrintInt(" DATA=", write_data, tx_char);
                         PrintText("\n", tx_char);
                         break;
 
                     }
+                    if (cmd[2] == 'P') // Write data from adress = 0  to adress = bufsize
+                    {
+                        task_runOnce(task_program_RTx,10,4);
+                        write_adr = 0;
+                        PrintInt("ADR=", write_adr, tx_char);
+                        PrintInt(" DATA=", write_data, tx_char);
+                        PrintText("\n", tx_char);
+                        break;
 
-                    PrintText("556RT4 dump\n", tx_char);
-                    read_RTx();
-                }
-                if(cmd[1] == '5')
-                {
-                    tester_mode = MODE_556RT5;
-                    init_556RTx();
-
-                    PrintText("556RT5 \n", tx_char);
-                    read_RTx();
-                }
+                    }
+                PrintInt("", tester_mode, tx_char);
+                PrintText("\n", tx_char);
+                read_RTx();
             break;
             default:
                 PrintText("Unknown command\n", tx_char);
