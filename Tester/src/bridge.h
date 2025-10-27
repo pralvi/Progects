@@ -9,7 +9,7 @@ extern "C" {
 #include "ring_buf.h"
 
 #define CDC_RX_BUF_SIZE 32
-#define CDC_TX_BUF_SIZE 128
+#define CDC_TX_BUF_SIZE 256
 
 RBUF_DECLARE(cdc_tx_buf, CDC_TX_BUF_SIZE);
 extern struct cdc_tx_buf cdc_tx_buf;

@@ -55,7 +55,20 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
         switch(cmd[0])
         {
             case 'S': // Status
-                PrintText("tester\n", tx_char);
+                PrintText("565RU6\n", tx_char);
+                PrintText("RR read All\n", tx_char);
+                PrintText("RWx write All\n", tx_char);
+                PrintText("0>AA 1>55 2>0 3>FF \n", tx_char);
+                PrintText("RC cycle test\n", tx_char);
+                PrintText("5556RT4 (RT5,RT17) (RT7,RT18)\n", tx_char);
+                PrintText("T4 (T5) (T7) read All\n", tx_char);
+                PrintText("TxAx set adress\n", tx_char);
+                PrintText("TxDx set data\n", tx_char);
+                PrintText("TxWx write data to adr\n", tx_char);
+                PrintText("TxP prog All data from adr = 0\n", tx_char);
+
+
+
             break;
 
             case 'R': // ru6
@@ -93,6 +106,7 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                 }
             break;
             case 'T': // rtx
+                if (cmd_size <= 2) break;
                 if(cmd[1] == '4')
                 {
                     if (tester_mode != MODE_556RT4)
@@ -106,6 +120,15 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                     if (tester_mode != MODE_556RT5)
                     {
                         tester_mode = MODE_556RT5;
+                        init_556RTx();
+                    }
+
+                }
+                if(cmd[1] == '7')
+                {
+                    if (tester_mode != MODE_556RT7)
+                    {
+                        tester_mode = MODE_556RT7;
                         init_556RTx();
                     }
 
@@ -145,8 +168,17 @@ uint8_t ExecuteTextCommand(char* cmd, uint8_t cmd_size) {
                         break;
 
                     }
+                 if (cmd[2] == 'R') // read data
+                    {
+                        PrintInt(" DATA", write_data, tx_char);
+                        PrintText("\n", tx_char);
+                        read_RTx_2();
+                        break;
+                    }
                 PrintInt("", tester_mode, tx_char);
                 PrintText("\n", tx_char);
+                set_datain_pullup();
+                clear_data();
                 read_RTx();
             break;
             default:

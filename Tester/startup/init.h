@@ -44,8 +44,7 @@ extern "C" {
 
 #define MODE_556RT4 2
 #define MODE_556RT5 3
-#define MODE_556RT17 4
-#define MODE_556RT18 5
+#define MODE_556RT7 4
 
 #define ver 155LN3
 
@@ -65,8 +64,8 @@ extern "C" {
 #define DIN3      A, 9
 #define DIN4      A, 10
 #define DIN5      A, 15
-#define DIN6      C, 15
-#define DIN7      C, 14
+#define DIN6      C, 14
+#define DIN7      C, 15
 
 //ADR AP6 OUT          //AP6: 1,20 to 5V  10,18 to GND
 #define ADR0      A, 0 //DD2 AP6 9in 11out
