@@ -311,11 +311,14 @@ void set_adr_RTx(uint16_t adr)
     }
     if (tester_mode == MODE_556RT7)
     {
-        SET_PIN(ADR8 , adr & 256);
-        SET_PIN(ADR9 , adr & 512);
-        SET_PIN(ADR10 , adr & 1024);
+        SET_PIN(ADR8 , (uint8_t)((adr & 256)>>8));
+        SET_PIN(ADR9 , (uint8_t)((adr & 512)>>9));
+        SET_PIN(ADR10 , (uint8_t)((adr & 1024)>>10));
+        //SET_PIN(ADR9 , adr & 512);
+        //SET_PIN(ADR10 , adr & 1024);
 
     }
+
 }
 
 void program_byte_RTx(uint16_t adr, uint8_t data  )
@@ -431,7 +434,7 @@ uint8_t read_byte_RTx(uint16_t adr)
         SET_PIN(CS2 , 1);
         SET_PIN(CS3 , 0);
     }
-    Delay_mks(50);
+    Delay_mks(100);
     Data |=  GET_PIN(DIN0);
     Data |=  GET_PIN(DIN1) << 1;
     Data |=  GET_PIN(DIN2) << 2;
@@ -440,7 +443,6 @@ uint8_t read_byte_RTx(uint16_t adr)
     Data |=  GET_PIN(DIN5) << 5;
     Data |=  GET_PIN(DIN6) << 6;
     Data |=  GET_PIN(DIN7) << 7;
-
     SET_PIN(CS1 , 1);
     SET_PIN(CS2 , 1);
     if (tester_mode == MODE_556RT4)

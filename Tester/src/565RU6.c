@@ -6,6 +6,7 @@
 uint8_t RU6_mode = RU6_NONE;
 uint8_t RU6_write_mode = 0;
 uint8_t cycle_test = 0;
+uint8_t test_bytes[4] = {0xAA, 0x55, 0, 0xFF};
 
 void init_565RU6(void)
 {
@@ -144,11 +145,13 @@ void test_process_RU6(uint8_t frame)
         i = 0 ;
         if (RU6_mode == RU6_WRITE)
         {
-            PrintText("WRITE OK\n", TX_CB);
+            PrintInt("WRITE ",RU6_write_mode, TX_CB);
+            if (cycle_test == 0) PrintText("\n", TX_CB);
             RU6_mode = RU6_NONE;
             return;
         }
-        RU6_mode = RU6_SEND;
+        RU6_mode = RU6_NONE;
+        if (cycle_test == 0) RU6_mode = RU6_SEND;
     }
 }
 
@@ -174,8 +177,8 @@ __enable_irq();
     }
     else
     {
-        if (RU6_mode == RU6_READ) test_process_RU6(16);
-        if (RU6_mode == RU6_WRITE) test_process_RU6(8);
+        if (RU6_mode == RU6_READ) test_process_RU6(32);
+        if (RU6_mode == RU6_WRITE) test_process_RU6(32);
         if (RU6_mode == RU6_SEND) test_process_RU6(8);
     }
 }
@@ -204,26 +207,24 @@ void cycle_test_556RU6(uint8_t tag)
     }
     case 1:
     {
-        RU6_mode = RU6_READ;
         Clear_Buffer();
-        RU6_write_mode++;
-        RU6_write_mode &= 3;
-
+        RU6_mode = RU6_READ;
         state = 2;
         break;
     }
     case 2:
     {
-        uint8_t Data = device_buffer[0];
-        uint64_t result = 0;
+        uint8_t Data = test_bytes[RU6_write_mode];
+        uint16_t result = 0;
         for (uint16_t i=0; i < RU6BUFSIZE; i++)
         {
-            device_buffer[i] ^= Data;
-            result += device_buffer[i];
+            if (device_buffer[i] != Data) result++;
         }
-         PrintInt("Result XOR = ",result, TX_CB);
+         PrintInt("Errors = ",result, TX_CB);
         PrintText("\n", TX_CB);
         state = 0;
+        RU6_write_mode++;
+        RU6_write_mode &= 3;
         break;
     }
 
