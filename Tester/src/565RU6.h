@@ -10,6 +10,10 @@ extern "C" {
 #define DO DATA0 // 14pin
 #define DI DATA1 // 2pin
 
+#define LED_OK DATA5 // 2pin
+#define LED_ERR DATA4 // 2pin
+
+
 #define RAS CTL2 // 4pin
 #define CAS CTL0 // 15pin
 #define WR  CTL1 // 3pin

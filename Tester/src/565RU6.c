@@ -19,6 +19,9 @@ void init_565RU6(void)
     SET_PIN(ADR5 , 0);
     SET_PIN(ADR6 , 0);
 
+    SET_PIN(LED_OK , 0);
+    SET_PIN(LED_ERR , 0);
+
     SET_PIN(RAS , 1);
     SET_PIN(CAS , 1);
     SET_PIN(WR , 1);
@@ -38,6 +41,8 @@ void init_565RU6(void)
     CFG_PIN(WR, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(DI, OUTPUT, PUSHPULL | SLOPE_2MHZ);
     CFG_PIN(DO, INPUT, FLOATING);
+    CFG_PIN(LED_OK, OUTPUT, PUSHPULL | SLOPE_2MHZ);
+    CFG_PIN(LED_ERR, OUTPUT, PUSHPULL | SLOPE_2MHZ);
 }
 
 void set_lo_adr_556RU6(uint16_t adr)
@@ -207,6 +212,8 @@ void cycle_test_556RU6(uint8_t tag)
     }
     case 1:
     {
+        SET_PIN(LED_OK , 0);
+        SET_PIN(LED_ERR , 0);
         Clear_Buffer();
         RU6_mode = RU6_READ;
         state = 2;
@@ -222,6 +229,17 @@ void cycle_test_556RU6(uint8_t tag)
         }
          PrintInt("Errors = ",result, TX_CB);
         PrintText("\n", TX_CB);
+        if (result == 0)
+        {
+            SET_PIN(LED_OK , 1);
+            SET_PIN(LED_ERR , 0);
+        }
+        else
+        {
+            SET_PIN(LED_OK , 0);
+            SET_PIN(LED_ERR , 1);
+        }
+
         state = 0;
         RU6_write_mode++;
         RU6_write_mode &= 3;

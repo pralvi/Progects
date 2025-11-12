@@ -193,6 +193,10 @@ void InitHardware() {
 
     tester_mode = MODE_NONE;
 
+    start_556RU6();
+    cycle_test ^= 1;
+
+
 
 }
 
