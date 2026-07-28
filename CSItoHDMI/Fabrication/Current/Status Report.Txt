@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Adapter_F.PcbDoc]
+   Generated File[Adapter_F-RoundHoles.TXT]
+   Generated File[Adapter_F-SlotHoles.TXT]
+   Generated File[Adapter_F.LDP]
+   Generated File[Adapter_F.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 13:26:34 On 28.07.2026
