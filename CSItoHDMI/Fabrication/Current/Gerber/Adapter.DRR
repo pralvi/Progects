@@ -1,16 +1,16 @@
 ---------------------------------------------------------------------------
-NCDrill File Report For: Adapter_F.PcbDoc   30.07.2026  12:51:59
+NCDrill File Report For: Adapter.PcbDoc   30.07.2026  12:48:12
 ---------------------------------------------------------------------------
 
 Layer Pair : Top to Bottom
-ASCII RoundHoles File : Adapter_F-RoundHoles.TXT
-ASCII SlotHoles File : Adapter_F-SlotHoles.TXT
+ASCII RoundHoles File : Adapter-RoundHoles.TXT
+ASCII SlotHoles File : Adapter-SlotHoles.TXT
 
 Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
 ---------------------------------------------------------------------------
-T1        35.43mil (0.89992mm)     Slot           4                2.95 Inch (74.88 mm)
+T1        35.43mil (0.89992mm)     Slot           4                2.34 Inch (59.55 mm)
 T2        137.8mil (3.50012mm)     Round          2                0.83 Inch (21.00 mm)
 ---------------------------------------------------------------------------
-Totals                                            6                3.77 Inch (95.88 mm)
+Totals                                            6                3.17 Inch (80.55 mm)
 
 Total Processing Time (hh:mm:ss) : 00:00:00

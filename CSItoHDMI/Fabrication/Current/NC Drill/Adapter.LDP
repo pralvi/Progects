@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\ALTIUM\Progects\CSItoHDMI\Adapter.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=adapter-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=adapter-slotholes.txt|DrillLayers=gtl,gbl

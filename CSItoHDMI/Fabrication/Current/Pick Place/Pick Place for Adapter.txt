@@ -1,7 +1,7 @@
 Designator Footprint               Mid X         Mid Y         Ref X         Ref Y         Pad X         Pad Y TB      Rotation Comment        
 
 P1         FDC_CSI_15pin      207.677mil    531.496mil     157.48mil    531.496mil    277.559mil    807.086mil  T        270.00 CSI_15pin      
-P2         HDMI_TYPE_A        721.457mil    531.496mil    787.402mil    531.496mil    589.173mil    708.662mil  T         90.00 HDMI           
+P2         HDMI_TYPE_A        866.142mil    302.165mil    866.142mil     236.22mil   1043.307mil    434.449mil  T        360.00 HDMI           
 C1         CAP_0603           403.543mil    324.803mil    403.543mil    324.803mil    403.543mil    354.331mil  T        270.00 100n           
 C2         CAP_0603           482.284mil    324.803mil    482.284mil    324.803mil    482.284mil    354.331mil  T        270.00 1uF            
 

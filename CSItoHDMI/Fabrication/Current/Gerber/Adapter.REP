@@ -1,9 +1,9 @@
 *************************************************************
-FileName = Adapter_F.GBR
+FileName = Adapter.GBR
 AutoAperture = True
 *************************************************************
 Generating : Top
-      File : Adapter_F.GTL
+      File : Adapter.GTL
 
     Adding Layer      : Top
 
@@ -23,7 +23,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom
-      File : Adapter_F.GBL
+      File : Adapter.GBL
 
     Adding Layer      : Bottom
 
@@ -38,7 +38,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Overlay
-      File : Adapter_F.GTO
+      File : Adapter.GTO
 
     Adding Layer      : Top Overlay
 
@@ -53,7 +53,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Paste
-      File : Adapter_F.GTP
+      File : Adapter.GTP
 
     Adding Layer      : Top Paste
 
@@ -71,7 +71,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Top Solder
-      File : Adapter_F.GTS
+      File : Adapter.GTS
 
     Adding Layer      : Top Solder
 
@@ -92,7 +92,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Solder
-      File : Adapter_F.GBS
+      File : Adapter.GBS
 
     Adding Layer      : Bottom Solder
 
@@ -109,7 +109,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Paste
-      File : Adapter_F.GBP
+      File : Adapter.GBP
 
     Adding Layer      : Bottom Paste
 
@@ -123,7 +123,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Bottom Overlay
-      File : Adapter_F.GBO
+      File : Adapter.GBO
 
     Adding Layer      : Bottom Overlay
 
@@ -133,7 +133,7 @@ Used DCodes :
 
 *************************************************************
 Generating : Outline
-      File : Adapter_F.GM32
+      File : Adapter.GM32
 
     Adding Layer      : Outline
 
