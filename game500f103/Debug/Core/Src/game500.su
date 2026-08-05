@@ -1,0 +1,9 @@
+../Core/Src/game500.c:29:6:Delay_Init	4	static
+../Core/Src/game500.c:43:6:Delay_Us	24	static
+../Core/Src/game500.c:52:6:Delay_Ms	16	static
+../Core/Src/game500.c:173:13:play_byte	24	static
+../Core/Src/game500.c:197:13:play_loader	16	static
+../Core/Src/game500.c:214:13:flash_init1	16	static
+../Core/Src/game500.c:264:16:read_flash	32	static
+../Core/Src/game500.c:321:13:write_PU2	24	static
+../Core/Src/game500.c:340:6:game500_run	8	static
